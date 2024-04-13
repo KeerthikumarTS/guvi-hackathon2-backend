@@ -12,7 +12,7 @@ node_server.use("/",router);
 
 router.get('/', function(req, res) {
   try {
-    res.status(200).json({message:`<h1> Wlecome to Express </h1>`})
+    res.status(200).json({message:`<h1> Welcome to Server </h1>`})
   } catch (error) {
     res.status(400).json({message:error})
   }
