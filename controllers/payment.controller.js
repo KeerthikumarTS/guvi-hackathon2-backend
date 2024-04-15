@@ -6,6 +6,7 @@ const paymentModel = require("../models/payment.model");
 paymentRouter.get("/",async(req,res) => {
     try {
         let payment = await paymentModel.find();
+        //console.log(payment)
       
         res.status(200).json({payment,message:"all payment data are fetched"})
     } catch (error) {
@@ -31,6 +32,7 @@ try {
    await newCart.save()
     res.status(200).json({newCart,message:"payment done"}) 
 } catch (error) {
+    //console.log(error)
     res.status(500).json({message:"error occured in payment process",error})
 }
 })

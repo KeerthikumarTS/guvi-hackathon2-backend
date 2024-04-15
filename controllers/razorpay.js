@@ -1,5 +1,3 @@
-
-
 const Razorpay = require('razorpay');
 const razorRouter = require("express").Router();
 var razorpay = new Razorpay({
@@ -13,12 +11,13 @@ var razorpay = new Razorpay({
         let {amount} = req.body
         console.log('request' , req.body)
         var options = {
-            amount: amount * 100,// 500 * 100,  // Amount in paise
+            amount: amount * 100,// 500 * 100,  // amount is in paise
             currency: "INR",
             receipt: "order_rcptid_11"
           };
 
           razorpay.orders.create(options, function(err, order) { // for every transaction a new order id is generated
+           // console.log('newly generated order id from backend razorpay.js',order,err);
             res.send({orderId : order?.id})
           });
     })

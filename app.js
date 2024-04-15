@@ -17,7 +17,7 @@ app_server.use(express.json());
 app_server.use("/products" , productRouter);
 app_server.use("/users",userRouter);
  app_server.use("/cart",cartRouter);
-app_server.use("/payment",paymentRouter); // cart payment
+app_server.use("/payment",paymentRouter);
 app_server.use("/razor" , razorRouter);
 
 
